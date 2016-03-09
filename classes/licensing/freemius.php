@@ -21,7 +21,9 @@ class freemius extends license {
 	 */
 	protected function set_plan(){
 		$plan = ingot_fs()->get_plan();
-		$this->plan = new plan( $plan->name  );
+		if ( $plan ) {
+			$this->plan = new plan( $plan->name );
+		}
 	}
 
 	/**

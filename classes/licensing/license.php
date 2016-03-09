@@ -52,7 +52,7 @@ class license {
 	 */
 	protected function __construct(){
 		$this->set_plan();
-		if( ! $this->plan->is_full() ){
+		if( false == $this->plan || ! $this->plan->is_full() ){
 			new pre_save( $this->plan );
 		}
 	}

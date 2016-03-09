@@ -28,9 +28,9 @@ abstract class filters {
 	 *
 	 * @since 1.1.0
 	 *
-	 * @param \ingot\licensing\plan $plan
+	 * @param null|\ingot\licensing\plan $plan
 	 */
-	public function __construct( plan $plan  ){
+	public function __construct(  $plan  ){
 		$this->plan = $plan;
 		$this->add_hooks();
 	}
