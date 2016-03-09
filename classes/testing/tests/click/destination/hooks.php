@@ -275,7 +275,7 @@ class hooks {
 				if ( is_numeric( $variant_id ) ) {
 					$this->hook_tests[ sanitize_key( $hook ) ] = $variant_id;
 					$this->hooked[ sanitize_key( $hook ) ] = $hook;
-					add_action( $hook, [ $this, 'hook_test_cb' ], 55 );
+					add_filter( $hook, [ $this, 'hook_test_cb' ], 55 );
 				}
 			}
 
@@ -288,11 +288,12 @@ class hooks {
 	 *
 	 * @since 1.1.0
 	 */
-	public function hook_test_cb(){
+	public function hook_test_cb( $arrg ){
 		if( ! empty( $this->hook_tests ) && in_array( sanitize_key( current_action() ), $this->hook_tests ) ){
 			ingot_register_conversion( $this->hook_tests[ sanitize_key( current_action() ) ] );
 		}
 
+		return $arrg;
 	}
 
 	/**
