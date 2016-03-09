@@ -44,7 +44,7 @@ class admin {
 	 * @return string
 	 */
 	public static function partial_path( $file ){
-		return INGOT_DIR . '/classes/ui/admin/partials/' . $file;
+		return dirname( __FILE__ ) . '/admin/partials/' . $file;
 	}
 
 	/**
