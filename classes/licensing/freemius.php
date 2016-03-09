@@ -17,7 +17,7 @@ class freemius extends license {
 	/**
 	 * Setup plan object
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 */
 	protected function set_plan(){
 		$plan = ingot_fs()->get_plan();
@@ -29,7 +29,7 @@ class freemius extends license {
 	/**
 	 * Save plan details
 	 *
-	 *  @since 1.1.1
+	 *  @since 1.2.0
 	 *
 	 * @param array $plan
 	 */

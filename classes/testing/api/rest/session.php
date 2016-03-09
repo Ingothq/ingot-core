@@ -338,7 +338,7 @@ class session extends route {
 	/**
 	 * Prepare and sanatize cookie param
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @param array $cookies
 	 *

@@ -91,7 +91,7 @@ class hooks {
 	/**
 	 * Class instance
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @var hooks
 	 */

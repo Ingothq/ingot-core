@@ -269,7 +269,7 @@ class init {
 	/**
 	 * Get current tests
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @return array group_ID => variant_ID
 	 */

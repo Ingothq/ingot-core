@@ -20,7 +20,7 @@ class count {
 	/**
 	 * Construct an OR clause for getting number of CTA test groups
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @return string
 	 */
@@ -54,7 +54,7 @@ class count {
 	/**
 	 * Get number of CTA test groups
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @return int
 	 */
@@ -70,7 +70,7 @@ class count {
 	/**
 	 * Get number of destination test groups
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @return int
 	 */

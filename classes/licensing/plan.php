@@ -17,7 +17,7 @@ class plan {
 	/**
 	 * Possible plan types
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @var array
 	 */
@@ -31,7 +31,7 @@ class plan {
 	/**
 	 * Slug for plan
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @var string
 	 */
@@ -40,7 +40,7 @@ class plan {
 	/**
 	 * Constructor
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @param string $plan_slug
 	 */
@@ -51,7 +51,7 @@ class plan {
 	/**
 	 * Get plan slug
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @return string
 	 */
@@ -99,7 +99,7 @@ class plan {
 	/**
 	 * Set plan_slug property
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @param string $plan
 	 */

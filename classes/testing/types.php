@@ -142,7 +142,7 @@ class types {
 	/**
 	 * Give definition of a destination test
 	 *
-	 * @since 1.1.1
+	 * @since 1.2.0
 	 *
 	 * @return array
 	 */
