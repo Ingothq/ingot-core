@@ -44,6 +44,11 @@
     "autoload": {
         "psr-4": {
             "ingot\\": "classes"
-        }
+        },
+        "files": [
+          "includes/functions.php",
+          "includes/active_check.php",
+          "includes/licensing.php"
+        ]
     }
 }
