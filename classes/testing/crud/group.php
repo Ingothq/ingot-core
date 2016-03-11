@@ -222,7 +222,7 @@ class group extends crud {
 	 * @return array|\WP_Error Prepared array or WP_Error if invalid
 	 */
 	protected static function prepare_meta( $data ) {
-		if( ! isset( $data[ 'meta' ] ) || empty( $data[ 'meta' ] || ! is_array( $data[ 'meta']) ) ){
+		if( ! isset( $data[ 'meta' ] ) || empty( $data[ 'meta' ] ) || ! is_array( $data[ 'meta' ] )  ){
 			$data[ 'meta' ] = [];
 			return $data;
 		}

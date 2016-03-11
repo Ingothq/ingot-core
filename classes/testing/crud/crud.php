@@ -95,7 +95,7 @@ abstract class crud {
 				$fields,
 				$table_name, helpers::v( 'group_ID', $params )
 			);
-		}elseif( ! empty( helpers::v( 'ids', $args, array() ) ) ){
+		}elseif( false != helpers::v( 'ids', $args, false )  ){
 			$where = true;
 			$in = implode( ',', helpers::v( 'ids', $params, array() ) );
 			$sql = sprintf( 'SELECT %s FROM `%s` WHERE `ID` IN( %s)', $fields,$table_name, $in );

@@ -75,7 +75,8 @@ class posts {
 				$obj->add( [], true );
 			}else{
 				$existing = $obj->get_groups();
-				if( empty( $existing ) || ! empty( array_diff( $existing, $current ) ) ){
+
+				if( empty( $existing ) || is_array( self::diff_or_false( $existing, $current ) ) ){
 
 					$obj->add( $current, true );
 				}
@@ -84,6 +85,29 @@ class posts {
 
 		}
 
+	}
+
+	/**
+	 * Basically array_diff except it returns false if result is empty
+	 *
+	 * NOTE: This is some stupid shit I wrote beacuse PHP5.4 doesn't to arbitrary expressions.
+	 *
+	 * @since 1.2.1
+	 *
+	 * @access protected
+	 *
+	 * @param array $a1
+	 * @param array $a2
+	 *
+	 * @return array|bool Diff of array or false if no difference
+	 */
+	protected static function diff_or_false( array $a1, array $a2 ){
+		$diff = array_diff( $a1, $a2 );
+		if( empty( $diff ) ){
+			$diff = false;
+		}
+
+		return $diff;
 	}
 
 	/**

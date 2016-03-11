@@ -132,9 +132,9 @@ class session extends route {
 				if ( is_numeric( $data[ 'session_ID' ] ) ) {
 					$session = \ingot\testing\crud\session::read( (int) $data[ 'session_ID' ] );
 
-
-					if ( ! empty( $request->get_param( 'test_ids' ) ) ) {
-						foreach ( $request->get_param( 'test_ids' ) as $variant_id ) {
+					$test_ids = $request->get_param( 'test_ids' );
+					if ( ! empty( $test_ids ) ) {
+						foreach ( $test_ids as $variant_id ) {
 							$html = '';
 
 							if( is_array( $group = group::get_by_variant_id( $variant_id ) ) ) {
@@ -198,8 +198,9 @@ class session extends route {
 			return $this->response( $session );
 		}
 
-		if ( ! empty( $request->get_param( 'click_url' ) ) && 'undefined' != $request->get_param( 'click_url' ) ) {
-			$session[ 'click_url' ] = $request->get_param( 'click_url' );
+		$click_url = $request->get_param( 'click_url' );
+		if ( ! empty($click_url ) && 'undefined' != $click_url ) {
+			$session[ 'click_url' ] = $click_url;
 			$session[ 'used' ] = true;
 			if( 0 !== ( $userID = get_current_user_id() ) ) {
 				$session[ 'click_url' ] = $userID;

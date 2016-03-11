@@ -138,8 +138,8 @@ class posts {
 	 */
 	protected function update( ) {
 		$this->clean_groups_var();
-
-		if( ! empty( $current =  $this->current_meta() ) ) {
+		$current =  $this->current_meta();
+		if( ! empty( $current ) ) {
 			foreach( $current as $value ) {
 				delete_post_meta( $this->post->ID, $this->meta_key, $value );
 			}

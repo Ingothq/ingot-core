@@ -68,7 +68,8 @@ class set {
 	 * @param \ingot\testing\cookies\init $cookies Cookies init class
 	 */
 	public static function setup_cookies( $cookies ){
-		if( ! empty( $cookies->get_ingot_cookie( false ) ) ){
+		$ingot_cookies = $cookies->get_ingot_cookie( false );
+		if( ! empty( $ingot_cookies ) ){
 			$cookie_time = ingot_cookie_time();
 			$cookie_name = $cookies->get_cookie_name();
 			setcookie( $cookie_name, $cookies->get_ingot_cookie(true), time() + $cookie_time, COOKIEPATH, COOKIE_DOMAIN, false );

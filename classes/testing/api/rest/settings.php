@@ -182,9 +182,10 @@ class settings extends route {
 	 */
 	public function page_search( $request ){
 		$posts = [];
-		if( ! empty( $request->get_param( 'search' ) ) ){
+		$search = $request->get_param( 'search' );
+		if( ! empty( $search ) ){
 			$query = new \WP_Query( [
-				's' => $request->get_param( 'search' ),
+				's' => $search,
 				'post_type' => 'page'
 			]);
 			if( $query->have_posts() ) {
