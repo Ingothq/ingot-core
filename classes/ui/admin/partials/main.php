@@ -15,7 +15,7 @@
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 							<span class="sr-only">
-								<?php _e( 'Toogle Navigation', 'ingot' ); ?>
+								<?php esc_html_e( 'Toogle Navigation', 'ingot' ); ?>
 							</span>
 						<span class="icon-bar"></span>
 						<span class="icon-bar"></span>
@@ -23,7 +23,7 @@
 					</button>
 					<a class="navbar-brand active" ui-sref="otherwise" >
 						<?php
-						printf( '<img src="%s" alt="%s" class="nav-logo" />', INGOT_URL . 'assets/img/ingot-logo-s.png', __( 'Ingot', 'ingot' ) );
+						printf( '<img src="%s" alt="%s" class="nav-logo" />', INGOT_ASSETS_URL . '/img/ingot-logo-s.png', esc_html__( 'Ingot', 'ingot' ) );
 						printf( ' <small>%s</small>',  INGOT_VER );
 						?>
 					</a>
@@ -32,12 +32,12 @@
 					<ul class="nav navbar-nav">
 						<li ng-class="isActiveNav('clickTests');">
 							<a ui-sref="clickTests">
-								<?php _e( 'Content Tests', 'ingot' ); ?>
+								<?php esc_html_e( 'Content Tests', 'ingot' ); ?>
 							</a>
 						</li>
 						<li ng-class="isActiveNav('price');">
 							<a ui-sref="priceTests">
-								<?php _e( 'Price Tests', 'ingot' ); ?>
+								<?php esc_html_e( 'Price Tests', 'ingot' ); ?>
 							</a>
 						</li>
 						<?php
@@ -52,12 +52,12 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li>
 							<a ui-sref="settings">
-								<?php _e( 'Settings', 'ingot' ); ?>
+								<?php esc_html_e( 'Settings', 'ingot' ); ?>
 							</a>
 						</li>
 						<li>
 							<a ui-sref="support">
-								<?php _e( 'Support', 'ingot' ); ?>
+								<?php esc_html_e( 'Support', 'ingot' ); ?>
 							</a>
 						</li>
 						<?php

@@ -79,11 +79,11 @@ class load {
 		//other
 		wp_enqueue_script( 'jquery-ui-core');
 		wp_enqueue_script( 'jquery-ui-slider' );
-		wp_register_script( 'lodash', INGOT_URL . 'assets/vendor/lodash.min.js' );
-		wp_enqueue_style( 'jquery-ui', INGOT_URL . "assets/admin/css/jquery-ui.min.css" );
-		wp_enqueue_style( 'font-awesome', INGOT_URL . "assets/admin/css/font-awesome.min.css" );
-		wp_enqueue_script( 'angular-translatejs', INGOT_URL . "assets/vendor/js/angular-translate/angular-translate.js", array( 'angularjs' ), false, $version);
-		wp_enqueue_style( 'bootstrap', INGOT_URL . 'assets/admin/css/bootstrap.min.css' );
+		wp_register_script( 'lodash', INGOT_ASSETS_URL . '/vendor/lodash.min.js' );
+		wp_enqueue_style( 'jquery-ui', INGOT_ASSETS_URL . "/admin/css/jquery-ui.min.css" );
+		wp_enqueue_style( 'font-awesome', INGOT_ASSETS_URL . "/admin/css/font-awesome.min.css" );
+		wp_enqueue_script( 'angular-translatejs', INGOT_URL . "/assets/vendor/js/angular-translate/angular-translate.js", array( 'angularjs' ), false, $version);
+		wp_enqueue_style( 'bootstrap', INGOT_ASSETS_URL . '/admin/css/bootstrap.min.css' );
 
 		//dependencies
 		$files = glob( INGOT_DIR . '/assets/vendor/js/**/*.js' );
@@ -104,11 +104,11 @@ class load {
 			wp_enqueue_script( $handle, $path, $dep, true, $version );
 		}
 
-		wp_enqueue_style( 'ingot-admin-dependencies', INGOT_URL . 'assets/admin/css/ingot-admin-dependencies.css' );
+		wp_enqueue_style( 'ingot-admin-dependencies', INGOT_ASSETS_URL . '/admin/css/ingot-admin-dependencies.css' );
 
 		//ingot
-		wp_enqueue_script( 'ingot-admin-app', INGOT_URL . "assets/admin/js/admin-app.js", array( 'jquery', 'angularjs', 'lodash' ), rand() );
-		wp_enqueue_style( 'ingot-admin-app', INGOT_URL . 'assets/admin/css/admin-app.css' );
+		wp_enqueue_script( 'ingot-admin-app', INGOT_ASSETS_URL . "/admin/js/admin-app.js", array( 'jquery', 'angularjs', 'lodash' ), rand() );
+		wp_enqueue_style( 'ingot-admin-app', INGOT_ASSETS_URL . '/admin/css/admin-app.css' );
 
 		//data to use in admin app
 		wp_localize_script( 'ingot-admin-app', 'INGOT_ADMIN', $this->vars() );
@@ -155,8 +155,8 @@ class load {
 		return array(
 			'api'                 => esc_url_raw( util::get_url() ),
 			'nonce'               => wp_create_nonce( 'wp_rest' ),
-			'partials'            => esc_url_raw( INGOT_URL . 'assets/admin/partials/' ),
-			'spinner_url'         => trailingslashit( INGOT_URL ) . 'assets/img/loading.gif',
+			'partials'            => esc_url_raw( INGOT_ASSETS_URL . '/admin/partials/' ),
+			'spinner_url'         => esc_url_raw( INGOT_ASSETS_URL . '/img/loading.gif' ),
 			'edd_active'          => esc_attr( ingot_is_edd_active() ),
 			'woo_active'          => esc_attr( ingot_is_woo_active() ),
 			'price_tests_enabled' => esc_attr( ingot_enable_price_testing() ),

@@ -20,12 +20,8 @@ class freemius extends license {
 	 * @since 1.2.0
 	 */
 	protected function set_plan(){
-		$plan = ingot_fs()->get_plan();
-		if ( $plan ) {
-			$this->plan = new plan( $plan->name );
-		}else{
-			$this->plan = new plan( 'nugget' );
-		}
+		$_plan = ingot_fs()->is_registered() ? ingot_fs()->get_plan()->name : 'nugget';
+		$this->plan = new plan( $_plan );
 	}
 
 	/**
