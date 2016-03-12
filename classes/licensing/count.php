@@ -47,7 +47,12 @@ class count {
 	 */
 	protected static function count_query( $sql ){
 		global $wpdb;
-		$wpdb->get_results(  $sql );
+		$r = $wpdb->get_results(  $sql, ARRAY_A );
+		if( ! empty( $r ) ) {
+			$r = array_values( $r[0]);
+			return $r[0];
+		}
+
 		return (int) $wpdb->num_rows;
 	}
 

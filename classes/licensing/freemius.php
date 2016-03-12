@@ -23,6 +23,8 @@ class freemius extends license {
 		$plan = ingot_fs()->get_plan();
 		if ( $plan ) {
 			$this->plan = new plan( $plan->name );
+		}else{
+			$this->plan = new plan( 'nugget' );
 		}
 	}
 

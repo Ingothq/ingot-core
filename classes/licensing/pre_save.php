@@ -110,6 +110,7 @@ class pre_save extends filters {
 			return true;
 		}
 
+		return false;
 	}
 
 	/**

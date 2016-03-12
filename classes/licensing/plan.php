@@ -104,7 +104,7 @@ class plan {
 	 * @param string $plan
 	 */
 	private function set_plan_slug( $plan ) {
-		if ( is_string( $plan ) && ! in_array( $plan, $this->plans ) ) {
+		if ( is_string( $plan ) && in_array( $plan, $this->plans ) ) {
 			$this->plan_slug = $plan;
 		} else {
 			$this->plan_slug = 'nugget';
