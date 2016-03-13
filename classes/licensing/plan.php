@@ -23,9 +23,10 @@ class plan {
 	 */
 	protected $plans = [
 		'nugget',
-		'woo',
-		'edd',
-		'full'
+		'ingotwoo',
+		'ingotedd',
+		'ingotgive',
+		'premium'
 	];
 
 	/**
@@ -93,7 +94,7 @@ class plan {
 	 * @return bool
 	 */
 	public function is_ecommerce(){
-		return in_array( $this->plan_slug, [ 'edd', 'woo' ] );
+		return in_array( $this->plan_slug, [ 'ingotedd', 'ingotwoo', 'ingotgive' ] );
 	}
 
 	/**
