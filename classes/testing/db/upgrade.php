@@ -62,7 +62,8 @@ class upgrade {
 		if( $version === $this->version ) {
 			return true;
 		}
-		if ( version_compare( $this->version, $version, '>' ) ) {
+		
+		if ( version_compare( $this->version, $version, '>' ) <= 0 ) {
 			return true;
 		}
 
