@@ -455,6 +455,14 @@ ingotApp.controller( 'clickGroup', ['$scope', '$http', '$stateParams', '$rootSco
         $scope.group.sub_type = type;
     };
 
+    $scope.template = false;
+    $scope.$watch('group.sub_type', function(newValue, oldValue) {
+        if( newValue != oldValue ){
+           $scope.template_url =  INGOT_ADMIN.click_partials[ newValue ];
+        }
+    });
+
+
     $scope.has_type = function() {
         if( !$scope.group ) {
             return;

@@ -152,6 +152,7 @@ class load {
 	 * @return array
 	 */
 	protected function vars() {
+
 		return array(
 			'api'                 => esc_url_raw( util::get_url() ),
 			'nonce'               => wp_create_nonce( 'wp_rest' ),
@@ -163,7 +164,8 @@ class load {
 			'click_type_options'  => types::allowed_click_types( true ),
 			'price_type_options'  => types::allowed_price_types(),
 			'destinations'        => \ingot\testing\tests\click\destination\types::destination_types( true, true ),
-			'dev_mode'            => INGOT_DEV_MODE
+			'dev_mode'            => INGOT_DEV_MODE,
+			'click_partials'      => click_partials::get_instance()->get_urls()
 		);
 
 	}
