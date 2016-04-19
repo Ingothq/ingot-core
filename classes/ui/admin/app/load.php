@@ -86,12 +86,36 @@ class load {
 		wp_enqueue_style( 'bootstrap', INGOT_ASSETS_URL . '/admin/css/bootstrap.min.css' );
 
 		//dependencies
-		$files = glob( INGOT_DIR . '/assets/vendor/js/**/*.js' );
-		$root = '/' . INGOT_ROOT . '/';
+		$files = [
+			0 => 'assets/vendor/js/Chart.js/Chart.js',
+			1 => 'assets/vendor/js/angular-aria/angular-aria.js',
+			2 => 'assets/vendor/js/angular-bootstrap-colorpicker/bootstrap-colorpicker-module.js',
+			3 => 'assets/vendor/js/angular-bootstrap/ui-bootstrap-tpls.js',
+			4 => 'assets/vendor/js/angular-cookies/angular-cookies.js',
+			5 => 'assets/vendor/js/angular-resource/angular-resource.js',
+			6 => 'assets/vendor/js/angular-sanitize/angular-sanitize.js',
+			7 => 'assets/vendor/js/angular-translate-interpolation-messageformat/angular-translate-interpolation-messageformat.js',
+			8 => 'assets/vendor/js/angular-translate-storage-cookie/angular-translate-storage-cookie.js',
+			9 => 'assets/vendor/js/angular-translate-storage-local/angular-translate-storage-local.js',
+			10 => 'assets/vendor/js/angular-translate/angular-translate.js',
+			11 => 'assets/vendor/js/angular-ui-router/angular-ui-router.js',
+			12 => 'assets/vendor/js/angular-ui-select2/select2.js',
+			13 => 'assets/vendor/js/angular/angular.js',
+			14 => 'assets/vendor/js/bootstrap-select/bootstrap-select.js',
+			15 => 'assets/vendor/js/bootstrap/bootstrap.js',
+			16 => 'assets/vendor/js/clipboard/clipboard.js',
+			17 => 'assets/vendor/js/jquery-ui/jquery-ui.js',
+			18 => 'assets/vendor/js/js-cookie/js.cookie.js',
+			19 => 'assets/vendor/js/messageformat/messageformat.js',
+			20 => 'assets/vendor/js/ngclipboard/ngclipboard.js',
+			21 => 'assets/vendor/js/select2/select2.js',
+			22 => 'assets/vendor/js/sweetalert/sweetalert.min.js',
+		];
+
 		foreach( $files as $i => $path ){
 			$handle = sanitize_key( basename( $path ) );
-			$pos = strpos( $path, $root ) + strlen( $root );
-			$path = INGOT_URL . substr( $path, $pos );
+			$path = trailingslashit( INGOT_URL ) . $path;
+
 			if( 'angular-translatejs' == $handle ) {
 				continue;
 			}
@@ -115,8 +139,6 @@ class load {
 
 		//translation strings for admin app
 		wp_localize_script( 'ingot-admin-app', 'INGOT_TRANSLATION', translations::strings() );
-
-
 
 	}
 
