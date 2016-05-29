@@ -12,6 +12,7 @@
 namespace ingot\testing\tests\click\destination;
 
 use ingot\testing\bandit\content;
+use ingot\testing\cookies\init_cookies;
 use ingot\testing\crud\group;
 use ingot\testing\crud\variant;
 use ingot\testing\utility\destination;

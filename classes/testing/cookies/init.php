@@ -207,9 +207,8 @@ class init {
 	 * @access protected
 	 */
 	protected function setup_price_cookie() {
+		return;
 
-		$price = new \ingot\testing\cookies\price( $this->cookie[ 'price' ] );
-		$this->cookie[ 'price' ] = $price->get_cookie();
 	}
 
 

@@ -32,7 +32,13 @@ function ingot_click_test( $id ) {
 				$html = call_user_func( $type, $group );
 				break;
 			default :
-				$html = '';
+				$callback = apply_filters( 'ingot_click_test_custom_render_callback', null, $type, $id, $group  );
+				if( is_callable( $callback ) ){
+					$_html = call_user_func( $callback, $group );
+					if( is_string( $_html ) ){
+						$html = $_html;
+					}
+				}
 
 		}
 	}

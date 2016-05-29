@@ -896,5 +896,12 @@ abstract class crud {
 
 	}
 
+	public static function find_by_content( $name ){
+
+		$table = self::get_table_name();
+		$sql = sprintf( "SELECT * FROM $table WHERE `content` == \"%s\" ", strip_tags( $name ), ARRAY_A );
+		return self::bulk_query( $sql );
+	}
+
 
 }
