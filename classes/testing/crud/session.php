@@ -306,5 +306,23 @@ class session extends crud {
 		}
 	}
 
+	/**
+	 * Delete sessions older than a given date
+	 *
+	 * @since 1.3.1
+	 *
+	 * @param int|string $date MySQL or Unix time to delete sessions older than
+	 *
+	 * @return false|int Number of sessions cleared or false if none cleared.
+	 */
+	public static function delete_older_than( $date ){
+		if( is_numeric( $date )){
+			$date = date("Y-m-d H:i:s", $date );
+		}
+		global $wpdb;
+		return $wpdb->query( sprintf( "DELETE FROM %s WHERE `created` > '%s'",  self::get_table_name(), $date ) );
+
+
+	}
 
 }

@@ -18,6 +18,7 @@ use ingot\testing\api\rest\util;
 use ingot\testing\api\rest\variant;
 use ingot\testing\cookies\init;
 use ingot\testing\crud\settings;
+use ingot\testing\db\sessions_cleanup;
 use ingot\testing\utility\helpers;
 use ingot\testing\utility\posts;
 
@@ -68,6 +69,7 @@ class ingot {
 	private function __construct() {
 		$this->init_session();
 		$this->hooks();
+		$this->sessions_cleanup();
 	}
 
 	/**
@@ -223,6 +225,25 @@ class ingot {
 	 */
 	public function get_current_session(){
 		return $this->current_session_data;
+	}
+
+	/**
+	 * Maybe trigger a sessiong cleanup
+	 *
+	 * @since 1.3.1
+	 */
+	public function sessions_cleanup(){
+		/**
+		 * Number of days to allow session data to stay for
+		 *
+		 * @since 1.3.1
+		 *
+		 * @param int $days Number of days
+		 */
+		$days = apply_filters( 'ingot_session_cleanup_days', 0  );
+		if ( 0 < absint( $days ) ) {
+			$cleanup = new sessions_cleanup( $days );
+		}
 	}
 
 }
