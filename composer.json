@@ -25,6 +25,10 @@
       {
         "type": "git",
         "url": "https://github.com/ingothq/wordpress-sdk"
+      },
+      {
+        "type": "git",
+        "url": "https://github.com/Ingothq/caldera-modals"
       }
     ],
     "require": {
