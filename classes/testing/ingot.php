@@ -18,7 +18,6 @@ use ingot\testing\api\rest\util;
 use ingot\testing\api\rest\variant;
 use ingot\testing\cookies\init;
 use ingot\testing\crud\settings;
-use ingot\testing\db\sessions_cleanup;
 use ingot\testing\utility\helpers;
 use ingot\testing\utility\posts;
 
@@ -69,7 +68,6 @@ class ingot {
 	private function __construct() {
 		$this->init_session();
 		$this->hooks();
-		$this->sessions_cleanup();
 	}
 
 	/**
@@ -92,8 +90,7 @@ class ingot {
 					$version = rand();
 				}
 
-				$version = 1;
-				wp_enqueue_script( 'ingot', INGOT_URL . "/assets/front-end/js/ingot-click-test{$min}.js", array( 'jquery' ), $version, true );
+				wp_enqueue_script( 'ingot', INGOT_ASSETS_URL . "/front-end/js/ingot-click-test{$min}.js", array( 'jquery' ), $version, true );
 				wp_localize_script( 'ingot', 'INGOT_UI', ingot::js_vars() );
 				wp_enqueue_script( 'js-cookie', '//cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.0/js.cookie.min.js' );
 
@@ -225,25 +222,6 @@ class ingot {
 	 */
 	public function get_current_session(){
 		return $this->current_session_data;
-	}
-
-	/**
-	 * Maybe trigger a sessiong cleanup
-	 *
-	 * @since 1.3.1
-	 */
-	public function sessions_cleanup(){
-		/**
-		 * Number of days to allow session data to stay for
-		 *
-		 * @since 1.3.1
-		 *
-		 * @param int $days Number of days
-		 */
-		$days = apply_filters( 'ingot_session_cleanup_days', 0  );
-		if ( 0 < absint( $days ) ) {
-			$cleanup = new sessions_cleanup( $days );
-		}
 	}
 
 }
