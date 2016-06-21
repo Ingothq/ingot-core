@@ -102,10 +102,11 @@ class click_partials {
 	/**
 	 * Populate $this->urls with internals
 	 *
-	 * @since 1.31
+	 * @since 1.3.1
 	 */
 	protected  function get_partial_urls(){
 		$internal = types::internal_click_types();
+		$internal[] = 'destination';
 		foreach( $internal as $type  ){
 			$this->urls[ $type ] = INGOT_ASSETS_URL . '/admin/partials/content-test-partials/' . $type . '.html';
 		}
