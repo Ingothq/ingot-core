@@ -83,7 +83,6 @@ class session extends route {
 						],
 						'cookies'             => [
 							'type'              => 'array',
-							'required'          => true,
 							'sanitize_callback' => [ $this, 'prepare_cookie_key' ]
 						],
 					],
@@ -240,7 +239,6 @@ class session extends route {
 			),
 			'cookies'             => [
 				'type'              => 'array',
-				'required'          => true,
 				'sanitize_callback' => [ $this, 'prepare_cookie_key' ]
 			],
 		];
