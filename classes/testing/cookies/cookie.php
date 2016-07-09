@@ -104,7 +104,7 @@ abstract class cookie {
 	 */
 	protected static function get_prefix(){
 		if( empty( static::$type  ) ){
-			return fale;
+			return false;
 		}
 		return 'ingot_' . static::$type . '_';
 	}
