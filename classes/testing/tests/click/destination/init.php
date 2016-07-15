@@ -279,9 +279,11 @@ class init {
 			self::get_destination_tests( true );
 		}
 		//make sure self::$tests is set right
-		foreach( self::$group_ids as $group_id ){
-			if( ! isset( self::$tests[ $group_id[ 'ID' ] ] ) ) {
-				self::get_test( $group_id[ 'ID' ] );
+		if ( ! empty( self::$group_ids ) ) {
+			foreach ( self::$group_ids as $group_id ) {
+				if ( ! isset( self::$tests[ $group_id[ 'ID' ] ] ) ) {
+					self::get_test( $group_id[ 'ID' ] );
+				}
 			}
 		}
 
