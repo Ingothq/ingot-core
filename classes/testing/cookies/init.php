@@ -14,7 +14,7 @@ namespace ingot\testing\cookies;
 
 use ingot\testing\crud\price_test;
 use ingot\testing\tests\flow;
-use ingot\testing\utility\price;
+
 
 class init {
 

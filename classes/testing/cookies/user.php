@@ -1,3 +1,6 @@
+<?php
+
+namespace ingot\testing\cookies;
 class user extends init {
 
 
