@@ -1,20 +1,15 @@
 <?php
 
 namespace ingot\testing\cookies;
+use ingot\testing\crud\session;
+
 class user extends init {
 
 
 	/**
-	 * Set cookie property for class
-	 *
-	 * @since 1.1.0
-	 *
-	 * @access protected
-	 *
-	 * @param array $cookie Current contents of this part of cookie
-	 * @param bool $reset Optional. Whether to rest or not, default is false
+	 * @inheritdoc
 	 */
-	 protected function set_cookie( $cookie, $reset ){
+	 protected function set_cookie( $cookie ){
 		 //TRACK INGOT IDs CROSS device/IPs
 		 
 		 $this->check_ingot_id();
