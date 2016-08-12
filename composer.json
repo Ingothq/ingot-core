@@ -25,17 +25,12 @@
       {
         "type": "git",
         "url": "https://github.com/ingothq/wordpress-sdk"
-      },
-      {
-        "type": "git",
-        "url": "https://github.com/Ingothq/caldera-modals"
       }
     ],
     "require": {
         "ingot/mabandit" : "*",
         "oefenweb/statistics": "dev-master",
         "jaybizzle/crawler-detect": "1.*",
-        "calderawp/caldera-modals": "^1.0",
         "blainesch/prettyarray": "dev-master",
         "freemius/wordpress-sdk": "dev-master",
         "shelob9/async": "dev-master"
