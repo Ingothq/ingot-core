@@ -41,9 +41,12 @@ class make {
 	 * @since 1.1.0
 	 */
 	public function shortcode_hooks() {
-		add_action( 'media_buttons', array( 'ingot\ui\admin\post\shortcode_inserter', 'button' ), 11 );
-		add_action( 'admin_footer', array( 'ingot\ui\admin\post\shortcode_inserter', 'modal' ) );
-		add_action( 'admin_enqueue_scripts', array( 'ingot\ui\admin', 'post_editor_scripts' ) );
+		$screen = get_current_screen();
+		if ( $screen->parent_base == 'edit' )
+			add_action( 'media_buttons', array( 'ingot\ui\admin\post\shortcode_inserter', 'button' ), 11 );
+			add_action( 'admin_footer', array( 'ingot\ui\admin\post\shortcode_inserter', 'modal' ) );
+			add_action( 'admin_enqueue_scripts', array( 'ingot\ui\admin', 'post_editor_scripts' ) );
+		}
 	}
 
 }
